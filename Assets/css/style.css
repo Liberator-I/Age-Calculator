@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url(../fonts/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins-Italic.ttf);
+    src: url(../fonts/Poppins-ExtraBoldItalic.ttf);
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+    src: url(../fonts/Poppins-BoldItalic.ttf);
+    src: url(../fonts/Poppins-Bold.ttf);
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    /* Primary Colors */
+    --primary-txt-color: hsl(259, 100%, 65%); /* Purple */
+    --error-color: hsl(0, 100%, 67%); /* Red */
+
+    /* Neutral Colors*/
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --input-font-size: 32px;
+    --input-font-size-mobile: 16px;
+    
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--off-white);
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 800px;
+    padding: 50px;
+    background-color: var(--white);
+
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px 20px 200px 20px;
+}
+
+label {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    color: var(--smokey-grey);
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper div {
+    margin-right: 30px;
+}
+
+input {
+    width: 150px;
+    padding: 10px 20px 10px 20px;
+    font-size: var(--input-font-size);
+   
+    border-radius: 5px;
+    border-style: solid;
+    outline: none;
+    cursor: pointer;
+    caret-color: var(--primary-txt-color);
+
+    transition: all .1s ease;
+    
+}
+
+input:focus, input:hover {
+    border-color: var(--primary-txt-color);
+}
+
+.divider-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+}
+
+.btn {
+    background-color: var(--off-black);
+    outline: none;
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-txt-color);
+    transform: scale(1.05);
+}
+
+.txt-wrapper {
+    width: 100%;
+    font-size: 5rem;
+}
+
+.txt-wrapper p {
+    font-style: italic;
+}
+
+.txt-wrapper span {
+    font-style: normal;
+}
+
+.no {
+    color: var(--primary-txt-color);
+    margin-right: 5px;
+}
+
+.err {
+    border: 1px solid red;
+}
+
+.hidden {
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.stat {
+    color: var(--error-color);
+    margin: 20px 0px 0px 5px;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-2px);
+    }
+    50% {
+        transform: translateX(2px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+.shake {
+    animation: shake 0.5s;
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 0px;
+    }
+    
+    .wrapper {
+        width: 90%;
+        padding: 50px 30px 50px 20px;
+    }
+
+    .divider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .divider {
+        grid-area: 1 / 1 / 2;
+    }
+
+    .btn {
+        grid-area: 1 / 1/ 2/ 2;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+    }
+
+    label {
+        font-size: 0.7rem;
+    }
+
+    .txt-wrapper {
+        font-size: 3rem;
+    }
+
+    input {
+        width: 70px;
+        padding: 10px 10px 10px 10px;
+        font-size: var(--input-font-size-mobile);
+
+        margin-bottom: 20px;
+       
+        border-radius: 5px;
+        border-style: solid;
+        outline: none;
+        cursor: pointer;
+        caret-color: var(--primary-txt-color);
+    
+        transition: all .2s ease;
+    }
+
+    .stat {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+  }

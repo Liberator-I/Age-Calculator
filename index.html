@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator App</title>
+    <link rel="stylesheet" href="Assets/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="input-wrapper">
+            <div>
+                <label for="day">Day</label>
+                <input class="i" type="text" name="day" id="day"placeholder="DD">
+            </div>
+            <div>
+                <label for="month">Month</label>
+                <input class="i" type="text" name="month" id="month" placeholder="MM">
+            </div>
+            <div>
+                <label for="year">Year</label>
+                <input class="i" type="text" name="year" id="year" placeholder="YYYY">
+            </div>
+        </div>
+        <p id="stat" class="stat"></p>
+        <div class="divider-wrapper">
+            <div class="divider"></div>
+            <button class="btn" id="btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="44" viewBox="0 0 46 44"><g fill="none" stroke="#FFF" stroke-width="2"><path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"/></g></svg>
+            </button>
+        </div>
+        <div class="txt-wrapper">
+            <p class="txt"><span class="no yearD">--</span>years</p>
+            <p class="txt"><span class="no monthD">--</span>months</p>
+            <p class="txt"><span class="no dayD">--</span>days</p>
+        </div>
+    </div>
+    <input class="hidden" id="date" type="date">
+    <script src="Assets/js/app.js"></script>
+</body>
+</html>
